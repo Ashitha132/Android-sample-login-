@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText e1,e2;
     Button b;
+    String s1,s2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,17 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"login succesful",Toast.LENGTH_LONG).show();
+
+                s1=e1.getText().toString().trim();
+                s2=e2.getText().toString().trim();
+                if(s1.equals("gasv") && s2.equals("1234")) {
+
+                    Toast.makeText(getApplicationContext(), "login success", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "invalid username or password", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
